@@ -107,9 +107,9 @@ const PROJECTS: Project[] = [
 ];
 
 const SKILLS = [
-  { category: "AI / ML", items: ["Python", "YOLOv8", "TSM", "Random Forest", "XGBoost", "LightGBM", "Scikit-learn", "OpenCV"] },
-  { category: "Data", items: ["Pandas", "NumPy", "Matplotlib", "Seaborn", "chi-squared", "ANOVA"] },
-  { category: "Web / Dev", items: ["Next.js", "Vercel", "Git"] },
+  { category: "AI / ML", items: ["Python", "Random Forest", "XGBoost", "LightGBM", "YOLOv8", "OpenCV"] },
+  { category: "Data", items: ["Pandas", "NumPy", "Matplotlib", "Seaborn", "chi-squared", "ANOVA", "Scikit-learn", "statsmodels"] },
+  { category: "Web / Dev", items: ["Next.js", "Vercel", "Git", "prompt engineering", "Qwen2.5-VL-32B-Instruct-AWQ"] },
 ];
 
 function Tag({ text }: { text: string }) {
@@ -193,7 +193,11 @@ export default function PortfolioPage() {
           </h1>
           <p className="mt-6 text-gray-600 text-base sm:text-lg max-w-2xl leading-relaxed">
             데이터 분석 및 가설 검정을 통해 실제 산업 문제를 해결하는 것에 관심이 있습니다.
-            팀 프로젝트로 컴퓨터 비전·자연어처리·통계 분석을 활용하여 엔드-투-엔드 AI 시스템을 개발하고,
+          </p>
+          <p className="mt-2 text-gray-600 text-base sm:text-lg max-w-2xl leading-relaxed">
+            팀 프로젝트로 컴퓨터 비전·자연어처리·통계 분석을 활용하여 엔드-투-엔드 AI 시스템을 개발했습니다.
+          </p>
+          <p className="mt-2 text-gray-600 text-base sm:text-lg max-w-2xl leading-relaxed">
             Next.js 기반 웹 페이지를 만들어 Vercel에 배포하는 작업을 진행했습니다.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
