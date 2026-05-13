@@ -14,6 +14,7 @@ type Project = {
   highlights: { label: string; value: string }[];
   sections: { title: string; content: string }[];
   result: string;
+  pdfUrl?: string;
   color: string;
 };
 
@@ -25,6 +26,7 @@ const PROJECTS: Project[] = [
     subtitle: "분류 모델과 VLM을 활용한 교통사고 상황 자동 분석 시스템",
     team: "포스코 청년 AI·Big Data 아카데미 32기 · A4팀 (5인)",
     tags: ["YOLOv8", "DeepSORT", "TSM", "Qwen2.5-VL-32B", "GPT image 2.0", "Python", "AI Hub"],
+    pdfUrl: "/ai-project.pdf",
     overview:
       "사고 직후 운전자가 당황한 상태에서 객관적 정황 서술이 어렵고, 보험사 직원 도착 전까지 현장 대응이 지연되는 문제가 있습니다. 블랙박스 영상을 업로드하면 사고 장소·차량 행동을 자동 분류하고, VLM이 사고 경위를 자연어로 생성하며, 사고 약도와 함께 교통사고 협의서 PDF를 자동 출력하는 엔드-투-엔드 시스템을 구축했습니다.",
     highlights: [
@@ -68,6 +70,7 @@ const PROJECTS: Project[] = [
     subtitle: "POSCO 스테인리스 제조 공정 데이터 분석 · 최적 조업조건 도출",
     team: "포스코 청년 AI·Big Data 아카데미 · A4팀 (5인)",
     tags: ["Random Forest", "XGBoost", "LightGBM", "chi-squared", "ANOVA", "Python"],
+    pdfUrl: "/bigdata-project.pdf",
     overview:
       "STS304(18% Cr / 8% Ni 오스테나이트계 스테인리스강)의 M형 결함 불량률이 2022년 0.2%에서 2025년 2.7%로 급증하며 연간 손실 cost 837억 원이 발생했습니다. 약 23,000건의 제강·연주·열연·소둔산세 공정 데이터를 분석하여 핵심 영향인자(Vital Few)를 도출하고, 최적 조업 조건을 제시해 손실 비용을 186억 원 수준으로 절감하는 방안을 마련했습니다.",
     highlights: [
@@ -130,7 +133,19 @@ function ProjectCard({ project }: { project: Project }) {
   return (
     <div className={`border-l-4 ${accent} bg-white rounded-2xl shadow-sm p-6 sm:p-8 space-y-4`}>
       <div>
-        <span className={`text-xs font-semibold px-2 py-0.5 rounded ${badgeBg}`}>{project.period}</span>
+        <div className="flex items-center gap-3 flex-wrap">
+          <span className={`text-xs font-semibold px-2 py-0.5 rounded ${badgeBg}`}>{project.period}</span>
+          {project.pdfUrl && (
+            <a
+              href={project.pdfUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="text-xs font-medium px-2.5 py-0.5 rounded bg-gray-100 text-gray-600 hover:bg-gray-200 transition"
+            >
+              📄 발표자료
+            </a>
+          )}
+        </div>
         <h2 className={`mt-2 text-xl sm:text-2xl font-bold ${headingColor}`}>{project.title}</h2>
         <p className="text-sm text-gray-600 mt-0.5">{project.subtitle}</p>
         <p className="text-xs text-gray-400 mt-1">{project.team}</p>
