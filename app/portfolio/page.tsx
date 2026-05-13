@@ -140,7 +140,7 @@ function ProjectCard({ project }: { project: Project }) {
               href={project.pdfUrl}
               target="_blank"
               rel="noreferrer"
-              className="text-xs font-medium px-2.5 py-0.5 rounded bg-gray-100 text-gray-600 hover:bg-gray-200 transition"
+              className="text-xs bg-blue-50 text-blue-600 border border-blue-200 px-2 py-0.5 rounded hover:bg-blue-100 transition"
             >
               📄 발표자료
             </a>
