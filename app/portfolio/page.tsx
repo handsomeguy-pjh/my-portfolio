@@ -110,9 +110,9 @@ const PROJECTS: Project[] = [
 ];
 
 const SKILLS = [
-  { category: "AI / ML", items: ["Python", "Random Forest", "XGBoost", "LightGBM", "YOLOv8", "OpenCV"] },
-  { category: "Data", items: ["Pandas", "NumPy", "Matplotlib", "Seaborn", "chi-squared", "ANOVA", "Scikit-learn", "statsmodels"] },
-  { category: "Web / Dev", items: ["Next.js", "Vercel", "Git", "Prompt Engineering", "Qwen2.5-VL-32B-Instruct-AWQ"] },
+  { category: "ML / DL", items: ["Scikit-learn", "Random Forest", "XGBoost", "LightGBM", "YOLOv8", "OpenCV", "Qwen2.5-VL-32B", "Prompt Engineering"] },
+  { category: "Data Analysis", items: ["Python", "Pandas", "NumPy", "Matplotlib", "Seaborn", "chi-squared", "t-test", "ANOVA", "statsmodels"] },
+  { category: "Infra / Tools", items: ["Next.js", "Vercel", "Git", "GitHub", "VSCode", "Jupyter", "Linux"] },
 ];
 
 function Tag({ text }: { text: string }) {
