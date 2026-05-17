@@ -15,6 +15,7 @@ type Project = {
   sections: { title: string; content: string }[];
   result: string;
   pdfUrl?: string;
+  notebooks?: { label: string; url: string }[];
   color: string;
 };
 
@@ -71,6 +72,13 @@ const PROJECTS: Project[] = [
     team: "포스코 청년 AI·Big Data 아카데미 · A4팀 (5인)",
     tags: ["Random Forest", "XGBoost", "LightGBM", "chi-squared", "ANOVA", "Python"],
     pdfUrl: "/bigdata-project.pdf",
+    notebooks: [
+      { label: "전체 분석", url: "https://github.com/parkjjeonghyun99/my-portfolio-pjh/blob/main/notebooks/Bigdata_Project_A4.ipynb" },
+      { label: "소둔산세 EDA", url: "https://github.com/parkjjeonghyun99/my-portfolio-pjh/blob/main/notebooks/Bigdata_Project_A4_eda_소둔산세.ipynb" },
+      { label: "연주공정 EDA", url: "https://github.com/parkjjeonghyun99/my-portfolio-pjh/blob/main/notebooks/Bigdata_Project_A4_eda_연주공정.ipynb" },
+      { label: "제강공정 EDA", url: "https://github.com/parkjjeonghyun99/my-portfolio-pjh/blob/main/notebooks/Bigdata_Project_A4_eda_제강공정.ipynb" },
+      { label: "열연 EDA", url: "https://github.com/parkjjeonghyun99/my-portfolio-pjh/blob/main/notebooks/Bigdata_Project_A4_eda_열연.ipynb" },
+    ],
     overview:
       "STS304(18% Cr / 8% Ni 오스테나이트계 스테인리스강)의 M형 결함 불량률이 2022년 0.2%에서 2025년 2.7%로 급증하며 연간 손실 cost 837억 원이 발생했습니다. 약 23,000건의 제강·연주·열연·소둔산세 공정 데이터를 분석하여 핵심 영향인자(Vital Few)를 도출하고, 최적 조업 조건을 제시해 손실 비용을 186억 원 수준으로 절감하는 방안을 마련했습니다.",
     highlights: [
@@ -149,6 +157,21 @@ function ProjectCard({ project }: { project: Project }) {
         <h2 className={`mt-2 text-xl sm:text-2xl font-bold ${headingColor}`}>{project.title}</h2>
         <p className="text-sm text-gray-600 mt-0.5">{project.subtitle}</p>
         <p className="text-xs text-gray-400 mt-1">{project.team}</p>
+        {project.notebooks && (
+          <div className="flex flex-wrap gap-2 mt-2">
+            {project.notebooks.map(n => (
+              <a
+                key={n.label}
+                href={n.url}
+                target="_blank"
+                rel="noreferrer"
+                className="text-xs bg-green-50 text-green-600 border border-green-200 px-2 py-0.5 rounded hover:bg-green-100 transition"
+              >
+                📓 {n.label}
+              </a>
+            ))}
+          </div>
+        )}
       </div>
 
       <div className="flex flex-wrap gap-2">
